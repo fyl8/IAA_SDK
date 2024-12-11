@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -35,7 +36,7 @@ dependencies {
     implementation libs.activity
     implementation libs.constraintlayout
     implementation project(':IAA_Library')
-//    implementation 'com.github.fyl8:IAA_SDK:v0.0.1-alpha'
+//    implementation 'com.github.fyl8:IAA_SDK:v0.2.8-alpha'
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core

@@ -1,7 +1,9 @@
 plugins {
     alias(libs.plugins.android.library)
     id 'maven-publish'
+    id 'com.google.gms.google-services'
 }
+
 group = 'com.github.iaa'
 version = '0.1'
 
@@ -33,13 +35,41 @@ android {
     }
 }
 
+
 dependencies {
     implementation libs.appcompat
     implementation libs.material
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+
+    //APPLOVIN
+    api 'com.applovin:applovin-sdk:+'
+    api 'com.applovin.mediation:bigoads-adapter:+'
+    api 'com.applovin.mediation:chartboost-adapter:+'
+    api 'com.google.android.gms:play-services-base:16.1.0'
+    api 'com.applovin.mediation:fyber-adapter:+'
+    api 'com.applovin.mediation:google-adapter:+'
+    api 'com.applovin.mediation:inmobi-adapter:+'
+    api 'com.squareup.picasso:picasso:2.71828'
+    api 'androidx.recyclerview:recyclerview:1.1.0'
+    api 'com.applovin.mediation:ironsource-adapter:+'
+    api 'com.applovin.mediation:vungle-adapter:+'
+    api 'com.applovin.mediation:mintegral-adapter:+'
+    api 'com.applovin.mediation:bytedance-adapter:+'
+    api 'com.applovin.mediation:unityads-adapter:+'
+
+    //Firebase
+    api(platform("com.google.firebase:firebase-bom:33.7.0"))
+    api("com.google.firebase:firebase-analytics")
+    //Adjust
+    api 'com.adjust.sdk:adjust-android:5.0.2'
+    api 'com.adjust.sdk:adjust-android-webbridge:5.0.2'
+
+    api 'com.android.installreferrer:installreferrer:2.2'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
 }
+
 afterEvaluate {
     publishing {
         publications {
