@@ -9,9 +9,6 @@
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
     <application >
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2325233743737469~2848222906"/>
         <property
             android:name="android.adservices.AD_SERVICES_CONFIG"
             android:resource="@xml/ga_ad_services_config"
