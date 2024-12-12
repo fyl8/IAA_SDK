@@ -1,6 +1,7 @@
 package com.github.iaa.applovin;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 
 import com.applovin.mediation.MaxAd;
@@ -8,10 +9,16 @@ import com.applovin.mediation.MaxError;
 import com.applovin.mediation.MaxReward;
 import com.applovin.mediation.MaxRewardedAdListener;
 import com.applovin.mediation.ads.MaxRewardedAd;
+import com.applovin.sdk.AppLovinSdk;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class MaxAds {
+
+    public static void startDebugger(Context context){
+        AppLovinSdk.getInstance(context).showMediationDebugger();
+    }
 
     public static void loadMaxRewardedAd(Activity activity, String reward_id,MaxRewardedAdsListener listener){
         MaxRewardedAd rewardedAd = MaxRewardedAd.getInstance(reward_id, activity);

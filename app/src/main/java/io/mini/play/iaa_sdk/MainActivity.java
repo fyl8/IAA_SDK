@@ -10,7 +10,6 @@ import com.applovin.mediation.MaxAd;
 import com.applovin.mediation.MaxReward;
 import com.github.iaa.Test;
 import com.github.iaa.applovin.MaxAds;
-import com.github.iaa.applovin.MaxConstant;
 import com.github.iaa.applovin.MaxRewardedAdsListener;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Activity activity = this;
         Test.logTest("12345");
+        //开启中介调试器,用来测试广告集成是否成功
+//        MaxAds.startDebugger(activity);
+
         findViewById(R.id.btn_load).setOnClickListener((v)->{
             MaxAds.loadMaxRewardedAd(activity, TestApplication.MAX_REWARD_AD_ID, new MaxRewardedAdsListener() {
                 @Override
