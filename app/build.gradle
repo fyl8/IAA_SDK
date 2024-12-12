@@ -36,10 +36,14 @@ dependencies {
     implementation libs.activity
     implementation libs.constraintlayout
     implementation project(':IAA_Library')
-//    implementation 'com.github.fyl8:IAA_SDK:v0.2.8-alpha'
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+
+
+
+
+//    implementation 'com.github.fyl8:IAA_SDK:+'
 
 
 

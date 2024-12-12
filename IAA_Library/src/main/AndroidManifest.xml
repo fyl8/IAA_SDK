@@ -13,9 +13,6 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-2325233743737469~2848222906"/>
-
-        <meta-data android:name="applovin.sdk.key" android:value="K3dpPzFlL2McMkQ0opxRbPJmMXvo0mTtrlARsNRhxAIRAQnT2DhDkrPP8ROP1TT2WO7yCpa3ixNbHdI8TTxRsA"/>
-
         <property
             android:name="android.adservices.AD_SERVICES_CONFIG"
             android:resource="@xml/ga_ad_services_config"
