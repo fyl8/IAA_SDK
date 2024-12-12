@@ -1,6 +1,6 @@
 -dontshrink
--keep class com.github.iaa.applovin.** { *; }
 -keep class com.adjust.sdk.** { *; }
+-keep class com.github.iaa.applovin.** { *; }
 -keep class com.google.android.gms.common.ConnectionResult {
    int SUCCESS;
 }
