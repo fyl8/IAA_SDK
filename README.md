@@ -86,9 +86,15 @@
  SDK内已集成其它类型广告的SDK，请自行参考MAX官方文档：
 
  https://developers.applovin.com/en/max/android/ad-formats/banner-and-mrec-ads/
+ 
 
+#### 6.开启调试器
 
-#### 6.事件埋点
+    //开启中介调试器,用来测试广告集成是否成功
+    MaxAds.startDebugger(activity);
+
+        
+#### 7.事件埋点
 
     //记录广告收入的事件方法，可在max广告的MaxRewardedAd.setRevenueListener()方法里面记录。
     MaxEvent.logRevenueEvent(Context context, MaxAd maxAd)
