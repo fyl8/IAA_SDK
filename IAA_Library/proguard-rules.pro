@@ -36,9 +36,6 @@
 -keep class androidx.recyclerview.widget.RecyclerView { *; }
 
 ##IronSource
--keepclassmembers class com.ironsource.sdk.controller.IronSourceWebView$JSInterface {
-    public *;
-}
 -keepclassmembers class * implements android.os.Parcelable {
     public static final android.os.Parcelable$Creator *;
 }
