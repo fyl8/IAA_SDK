@@ -8,7 +8,7 @@
     准备：应用名称，包名，给运营人员。
     
     得到：运营人员会给到包名对应的：
-    《MAX SDK key》《Max激励视频广告ID》
+    《MAX SDK key》《Max激励视频广告ID》《Google Admob App ID》
     《Adjust app token》
     《Firebase 所需要的json文件》
 
@@ -73,7 +73,15 @@ Step 1. Add the JitPack repository to your build file
     }
 
 
-#### 4.在你的Application初始化
+#### 4.AndroidManifest文件中添加
+
+ 	<application>
+	        <meta-data
+	            android:name="com.google.android.gms.ads.APPLICATION_ID"
+	            android:value="<运营人员那里给到的admob广告APP_ID>"/>
+    </application>
+
+#### 5.在你的Application初始化
 
 
     public class TestApplication extends Application {
@@ -91,7 +99,7 @@ Step 1. Add the JitPack repository to your build file
     }  
 
 
-#### 5.加载激励视频广告
+#### 6.加载激励视频广告
 
 
     MaxAds.loadMaxRewardedAd(activity,MaxConstant.MAX_REWARD_AD_ID,new MaxRewardedAdsListener() {
@@ -128,13 +136,13 @@ Step 1. Add the JitPack repository to your build file
  https://developers.applovin.com/en/max/android/ad-formats/banner-and-mrec-ads/
  
 
-#### 6.开启调试器
+#### 7.开启调试器
 
     //开启中介调试器,用来测试广告集成是否成功
     MaxAds.startDebugger(activity);
 
         
-#### 7.事件埋点
+#### 8.事件埋点
 
     //记录广告收入的事件方法，可在max广告的MaxRewardedAd.setRevenueListener()方法里面记录。
     MaxEvent.logRevenueEvent(Context context, MaxAd maxAd)
@@ -168,7 +176,7 @@ Step 1. Add the JitPack repository to your build file
     MaxEvent.logEventADorFA(activity,"adioxqs","ad_click",maps);
 
 
-#### 8.proguard混淆规则
+#### 9.proguard混淆规则
 
 
 	-keep class com.adjust.sdk.** { *; }
