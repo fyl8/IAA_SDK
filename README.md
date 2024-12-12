@@ -2,12 +2,52 @@
 
 ### Version:1.0.1
 
+### 集成前
+
+
+    准备：应用名称，包名，给运营人员。
+    
+    得到：运营人员会给到包名对应的：
+    《MAX SDK key》《Max激励视频广告ID》
+    《Adjust app token》
+    《Firebase 所需要的json文件》
+
 #### 1.添加依赖
+**gradle**
 
+Step 1. Add the JitPack repository to your build file
 
-    implementation 'com.github.fyl8:IAA_SDK:+'
+    dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		repositories {
+			mavenCentral()
+			maven { url 'https://www.jitpack.io' }
+		}
+	}
 
+Step 2. Add the dependency
+    
+    implementation 'com.github.fyl8:IAA_SDK:tag' //需要先给应用名称和包名来生成对应的版本
 
+**maven**
+
+Step 1. Add the JitPack repository to your build file
+
+    <repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://www.jitpack.io</url>
+		</repository>
+	</repositories>
+ 
+ Step 2. Add the dependency
+
+     <dependency>
+	    <groupId>com.github.fyl8</groupId>
+	    <artifactId>IAA_SDK</artifactId>
+	    <version>Tag</version> //需要先给应用名称和包名来生成对应的版本
+	</dependency>
+ 
 
 #### 2.app 级别 gradle 下增加
 
