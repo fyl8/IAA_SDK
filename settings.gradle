@@ -26,6 +26,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "IAA_sdk"
+rootProject.name = "IAA_MAX"
 include ':app'
 include ':IAA_Library'

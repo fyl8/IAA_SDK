@@ -1,6 +1,7 @@
 package io.mini.play.iaa_sdk;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -8,9 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.applovin.mediation.MaxAd;
 import com.applovin.mediation.MaxReward;
-import com.github.iaa.Test;
 import com.github.iaa.applovin.MaxAds;
+import com.github.iaa.applovin.MaxEvent;
 import com.github.iaa.applovin.MaxRewardedAdsListener;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Activity activity = this;
-        Test.logTest("12345");
         //开启中介调试器,用来测试广告集成是否成功
 //        MaxAds.startDebugger(activity);
 
@@ -48,6 +49,28 @@ public class MainActivity extends AppCompatActivity {
             });
         });
 
+
+        logEventFA(activity,"app_start");
+        logEventFA(activity,"start_loading");
+        logEventFA(activity,"finish_loading");
+        logEventFA(activity,"click_startgame");
+        logEventFA(activity,"enter_lv_x","游戏ID_1","关卡2");
+        logEventFA(activity,"enter_lv_x","游戏ID_1","关卡3");
+        logEventFA(activity,"enter_lv_x","游戏ID_1","关卡3");
+        logEventFA(activity,"app_end");
     }
+
+    /**firebase普通事件，不带参数的埋点方法*/
+    public static void logEventFA(Context context, String eventName){
+        FirebaseAnalytics.getInstance(context).logEvent(eventName,new Bundle());
+    }
+    /**firebase普通事件，带参数的埋点方法*/
+    public static void logEventFA(Context context,String eventName,String gameID,String levelNumber){
+        Bundle bundle = new Bundle();
+        bundle.putString("game_id",gameID);
+        bundle.putString("level_number",levelNumber);
+        FirebaseAnalytics.getInstance(context).logEvent(eventName,bundle);
+    }
+
 
 }
